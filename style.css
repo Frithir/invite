@@ -1,13 +1,148 @@
-body {
-  font-family: Arial, sans-serif;
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Georgia", serif;
   background: #0c0b11;
-  color: whitesmoke;
+  color: #f5f5f5;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .container {
-  max-width: 800px;
-  margin: auto;
-  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+  flex: 1;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+  border-bottom: 1px solid rgba(245, 245, 245, 0.2);
+  padding-bottom: 20px;
+}
+
+.details {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  line-height: 1.8;
+}
+
+.date {
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.location {
+  margin-top: 10px;
+  font-style: italic;
+  color: #d0d0d0;
+}
+
+.image-gallery {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+.image {
+  flex: 1;
+  aspect-ratio: 4/3;
+  background: rgba(245, 245, 245, 0.05);
+  border: 1px solid rgba(245, 245, 245, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  min-height: 150px;
+}
+
+.image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.03) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.left-image {
+  background-image: url("./image-1.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.right-image {
+  background-image: url("./image-2.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.divider {
+  width: 60px;
+  height: 1px;
+  background: rgba(245, 245, 245, 0.3);
+  margin: 30px auto;
+}
+
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 0.9rem;
+  color: #888;
+  border-top: 1px solid rgba(245, 245, 245, 0.1);
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .details {
+    font-size: 1rem;
+  }
+
+  .date {
+    font-size: 1.1rem;
+  }
+
+  .image-gallery {
+    flex-direction: column;
+    gap: 15px;
+    margin: 0;
+  }
+
+  .image {
+    width: 100%;
+  }
+
+  .container {
+    padding: 30px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  .container {
+    padding: 20px 15px;
+  }
 }
